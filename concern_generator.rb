@@ -12,5 +12,6 @@ class ConcernGenerator < Rails::Generators::NamedBase
   desc 'This creates a model concern'
   def copy_concern_file
     template 'concern.rb', "app/#{options[:type].pluralize}/concerns/#{file_name}.rb"
+    template 'concern_test.rb', "test/unit/concerns/#{file_name}_test.rb"
   end
 end
